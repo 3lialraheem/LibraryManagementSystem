@@ -47,5 +47,47 @@ public class Member extends Person {
 	public void updateEmail(String newEmail) {
 		this.email = newEmail;
 	}
-		
+	
+	// Methods
+	
+	public int getPriotiy() {
+		return 2; 
+	}
+	
+	public int getBorrowLimit() {
+		return 3; 
+	}
+	
+	public int getBorrowDays() {
+		return 15;
+	}
+	
+	public boolean canBorrow() {
+		if (activeBorrowings < getBorrowLimit()) {
+			return true;
+		}
+		else {
+			return false;
+		}
+	}
+	
+	public void addBorrow() {
+		if (canBorrow()) {
+			activeBorrowings++;
+			totalBorrowings++;
+		}
+		else {
+			System.out.println("This user reached the borrwoing limit");
+		}
+	}
+	
+	public void addReturn() {
+		if (activeBorrowings > 0) {
+			activeBorrowings--;
+		}
+		else {
+			System.out.println("This user has no books to return");
+		}
+	}
+	
 }
