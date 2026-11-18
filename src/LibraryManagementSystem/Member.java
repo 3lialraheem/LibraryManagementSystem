@@ -47,7 +47,5 @@ public class Member extends Person {
 	public void updateEmail(String newEmail) {
 		this.email = newEmail;
 	}
-	
-	//Methods:
-	
+		
 }
