@@ -24,6 +24,3 @@ hs_err_pid*
 replay_pid*
 /bin/
 .DS_Store
-src/LibraryManagementSystem/.classpath
-src/LibraryManagementSystem/.project
-src/LibraryManagementSystem/src/module-info.java

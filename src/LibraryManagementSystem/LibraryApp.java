@@ -19,4 +19,6 @@ public class LibraryApp {
 	private PriorityQueue<WaitingEntry> waitingList = new PriorityQueue<>();
 	private ArrayDeque<BorrowRecord> borrowHistory = new ArrayDeque<>(); // used as a stack
 
+	
+	
 }
