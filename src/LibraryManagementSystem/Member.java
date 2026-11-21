@@ -50,7 +50,7 @@ public class Member extends Person {
 	
 	// Methods
 	
-	public int getPriotiy() {
+	public int getPriority() {
 		return 2; 
 	}
 	

@@ -17,7 +17,7 @@ public class PremiumMember extends Member{
 	}
 	
 	@Override
-	public int getPriotiy() {
+	public int getPriority() {
 		return 1;
 	}
 
