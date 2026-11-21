@@ -2,11 +2,13 @@ package LibraryManagementSystem;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
-public class Author {
-    private String nationality;
+
+public class Author extends Person{
+    
+	private String nationality;
     private final ArrayList<Book> authorBooks;
     public Author(int id, String name, String nationality) {
-        super(name, id);
+        super(id, name);
         this.nationality = nationality;
         this.authorBooks = new ArrayList<>();
     }
