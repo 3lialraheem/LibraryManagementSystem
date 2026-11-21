@@ -1,5 +1,4 @@
 package LibraryManagementSystem;
-import java.util.Objects;
 import java.util.PriorityQueue;
 public class Book {
     private String title;
@@ -9,7 +8,6 @@ public class Book {
     private int year;
     private int availableCopies;
     private final PriorityQueue<WaitingEntry> waitingList;
-
     public Book(String isbn, String title, Author author, int pages, int year, int availableCopies) {
         if (isbn == null || isbn.isBlank()) {
             throw new IllegalArgumentException("ISBN cannot be empty.");
@@ -27,7 +25,6 @@ public class Book {
         this.year = year;
         this.availableCopies = availableCopies;
         this.waitingList = new PriorityQueue<>();
-
         if (author != null) {
             author.addBook(this);
         }
@@ -35,19 +32,15 @@ public class Book {
     public String getTitle() {
         return title;
     }
-
     public String getIsbn() {
         return isbn;
     }
-
     public Author getAuthor() {
         return author;
     }
-
     public int getPages() {
         return pages;
     }
-
     public int getYear() {
         return year;
     }
@@ -62,59 +55,33 @@ public class Book {
             this.title = title.trim();
         }
     }
-
     public void updatePages(int pages) {
         if (pages < 1) {
             throw new IllegalArgumentException("Pages must be at least 1.");
         }
         this.pages = pages;
     }
-
     public void updateYear(int year) {
         this.year = year;
     }
-
     public void setAuthor(Author author) {
         this.author = author;
         if (author != null) {
             author.addBook(this);
         }
     }
-
     public boolean isAvailable() {
         return availableCopies > 0;
     }
-
     public void decreaseCopies() {
         if (availableCopies <= 0) {
             throw new IllegalStateException("No available copies left to decrease for ISBN: " + isbn);
         }
-        availableCopies--;
     }
-
     public void increaseCopies() {
-        availableCopies++;
     }
     public String toFileString() {
         int authorId = (author != null) ? author.getId() : -1;
         return isbn + "|" + title + "|" + authorId + "|" + pages + "|" + year + "|" + availableCopies;
     }
-
-    @Override
-    public boolean equals(Object o) {
-        if (this == o) return true;
-        if (!(o instanceof Book other)) return false;
-        return Objects.equals(isbn, other.isbn);
-    }
-    @Override
-    public int hashCode() {
-        return Objects.hash(isbn);
-    }
-    @Override
-    public String toString() {
-        String authorName = (author != null) ? author.getName() : "Unknown";
-        return String.format("Book [ISBN=%s, Title=%s, Author=%s, Year=%d, Pages=%d, Available=%d]",
-                isbn, title, authorName, year, pages, availableCopies);
-    }
-}
 }
