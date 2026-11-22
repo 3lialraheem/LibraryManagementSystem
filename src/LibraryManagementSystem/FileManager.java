@@ -51,6 +51,6 @@ public class FileManager {
     // loadBooks(List<Author> authors): 
    // reads books.txt and rebuilds each book, linking it to its author by ID
 }
-//  left: 
+//  left :
 //saveMembers / loadMembers
 //saveRecords / loadRecords
