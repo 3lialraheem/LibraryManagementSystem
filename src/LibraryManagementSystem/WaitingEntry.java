@@ -71,7 +71,7 @@ public class WaitingEntry implements Comparable<WaitingEntry> {
 		return member.getId() == other.member.getId() && book.getIsbn().equals(other.book.getIsbn());
 	}
 
-	Z@Override
+	@Override
 	public int hashCode() {
 		return 31 * member.getId() + book.getIsbn().hashCode();
 	}
@@ -89,6 +89,6 @@ public class WaitingEntry implements Comparable<WaitingEntry> {
 				+ waitingDate.toLocalDate();
 	}
 }
-}
+
 
 	
